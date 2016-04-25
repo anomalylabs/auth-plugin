@@ -1,4 +1,4 @@
-# Helper Plugin
+# Auth Plugin
 
 - [General Information](#general)
 
@@ -9,4 +9,4 @@
 
 `anomaly.plugin.auth`
 
-The helper plugin provides safe access to the `\Illuminate\Http\Auth` class within Twig.
+The auth plugin that provides safe API access to Laravel's Auth class.

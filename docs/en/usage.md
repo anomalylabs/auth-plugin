@@ -1,13 +1,19 @@
 # Usage
 
-To use the auth object simply call any of the public methods from the auth class prefixed with `auth_*`.
+The auth class provides restricted access to Laravel's `Guard` class often referred to as _Auth_.
 
-For documentation on the auth class and what methods are available check out the [Laravel Documentation](https://laravel.com/docs/5.1/auths).
+### Checking if a user is logged in.
 
-    {% verbatim %}{{ auth_url(1) }}{% endverbatim %} // http://pyrocms.com/documentation/auth-plugin/usage
+To check if a user is logged in or a guest use _check_ and _guest_ methods.
 
-    {% verbatim %}{{ auth_segment(1) }}{% endverbatim %} // documentation
+    {% verbatim %}{{ auth_check() }}{% endverbatim %} // true or false
 
-    {% verbatim %}{{ auth_is("admin/*") ? "Nope" : "Yes" }}{% endverbatim %} // Nope
+    {% verbatim %}{{ auth_guest() }}{% endverbatim %} // true or false
 
-    {% verbatim %}{{ auth_route().getParameter('project') }}{% endverbatim %} // auth-plugin
+### Returning the logged in user
+
+The user method returns the decorated instance of the logged in user or _null_ if none.
+
+    {% verbatim %}{{ auth_user() }}{% endverbatim %} // The user presenter
+
+    {% verbatim %}{{ auth_user().display_name }}{% endverbatim %} // Ryan Thompson
